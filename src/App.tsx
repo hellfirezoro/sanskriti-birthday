@@ -110,6 +110,10 @@ export const App: React.FC = () => {
           friendName={birthdayData.friendName}
         />
 
+        {hasOpenedSurprise && (
+          <FloatingEnvelopeButton onClick={() => setIsLetterOpen(true)} />
+        )}
+
         {/* Hero Welcome Section */}
         <HeroSection
           data={birthdayData}
@@ -147,9 +151,6 @@ export const App: React.FC = () => {
           footer={birthdayData.footer}
           friendName={birthdayData.friendName}
         />
-
-        {/* Floating Letter Icon Button */}
-        <FloatingEnvelopeButton onClick={() => setIsLetterOpen(true)} />
 
         {/* Modals */}
         <FloatingLetterModal

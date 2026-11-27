@@ -176,18 +176,17 @@ export const FloatingLetterModal: React.FC<FloatingLetterModalProps> = ({
  */
 export const FloatingEnvelopeButton: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   return (
-    <button
-      onClick={onClick}
-      title="Open Sanskriti's Letter 💌"
-      className="fixed bottom-6 right-6 z-40 group flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-purple-500 text-white shadow-xl shadow-pink-500/30 hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 animate-float-medium"
+    <div
+      className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-40 motion-safe:animate-float-medium hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]"
     >
-      <div className="relative">
-        <Mail className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-        <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-yellow-300 rounded-full animate-ping" />
-      </div>
-      <span className="font-medium text-xs sm:text-sm tracking-wide hidden sm:inline">
-        Read Letter 💌
-      </span>
-    </button>
+      <button
+        type="button"
+        onClick={onClick}
+        className="flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-pink-700 via-rose-700 to-purple-700 text-white shadow-xl shadow-pink-500/30 font-semibold text-sm tracking-wide transition hover:shadow-2xl motion-safe:hover:scale-105 motion-safe:active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pink-700 motion-reduce:transition-none"
+      >
+        <Mail aria-hidden="true" className="w-5 h-5" />
+        Read Letter
+      </button>
+    </div>
   );
 };
