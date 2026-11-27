@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FAF7F2;
+    background-image: radial-gradient(#F0E5DC 1px, transparent 1px), radial-gradient(#F0E5DC 1px, #FAF7F2 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    color: #4A403A;
+  }
+}
+
+/* Custom Scrapbook & Aesthetic Polish */
+.scrapbook-paper {
+  background: #FFFDF9;
+  box-shadow: 0 10px 30px -10px rgba(180, 140, 140, 0.18), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+}
+
+.washi-tape {
+  position: absolute;
+  height: 24px;
+  width: 90px;
+  background-color: rgba(254, 215, 226, 0.75);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  backdrop-filter: blur(2px);
+  transform-origin: center;
+}
+
+.washi-tape-top {
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.washi-tape-corner {
+  top: -10px;
+  left: -20px;
+  transform: rotate(-35deg);
+}
+
+/* Glowing candle flame */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 10px #ff9e42);
+  }
+  25% {
+    transform: scale(1.08, 0.96) rotate(1deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 15px #ffb300);
+  }
+  50% {
+    transform: scale(0.95, 1.05) rotate(-2deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 8px #ff7043);
+  }
+  75% {
+    transform: scale(1.04, 0.98) rotate(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 14px #ffc107);
+  }
+}
+
+.candle-flame {
+  animation: flameFlicker 1.4s infinite ease-in-out alternate;
+  transform-origin: bottom center;
+}
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #F4C2C2;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E89EAE;
+}
+
+/* Floating animation variants */
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
